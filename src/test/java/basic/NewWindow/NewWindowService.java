@@ -1,10 +1,16 @@
 package basic.NewWindow;
 
 import basic.Table.TableCheck;
+import lombok.AllArgsConstructor;
+import org.openqa.selenium.WebDriver;
 
 import java.util.Set;
 
-public class NewWindowService extends NewWindowTestBase{
+@AllArgsConstructor
+public class NewWindowService {
+
+    WebDriver driver;
+    String mainWindowHandle;
 
     public void switchToNewWindow() {
         Set<String> windowHandles = driver.getWindowHandles();

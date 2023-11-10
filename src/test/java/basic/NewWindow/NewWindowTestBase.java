@@ -33,7 +33,7 @@ public class NewWindowTestBase {
         driver = new ChromeDriver(options);
         driver.get("http://www.seleniumui.moderntester.pl/windows-tabs.php");
         mainWindowHandle = driver.getWindowHandle();
-        newWindowService = new NewWindowService();
+        newWindowService = new NewWindowService(driver, mainWindowHandle);
     }
 
     @AfterEach
