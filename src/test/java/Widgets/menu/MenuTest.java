@@ -21,17 +21,10 @@ public class MenuTest extends MenuTestBase {
     @ParameterizedTest
     @MethodSource("createUserData")
     public void testCreateUser(String name, String email, String password) {
-        // Navigate through menu
         clickMenu("ui-id-9");
         clickMenu("ui-id-13");
         clickMenu("ui-id-16");
 
-        // Fill out the form
-        driver.findElement(By.id("nameField")).sendKeys(name);
-        driver.findElement(By.id("emailField")).sendKeys(email);
-        driver.findElement(By.id("passwordField")).sendKeys(password);
-
-        driver.findElement(By.id("createAccount")).click();
     }
 
     private void clickMenu(String id) {

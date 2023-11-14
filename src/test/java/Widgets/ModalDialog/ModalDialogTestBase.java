@@ -1,4 +1,4 @@
-package Iterations.dragable;
+package Widgets.ModalDialog;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -8,10 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class DragTestBase {
+public class ModalDialogTestBase {
 
     WebDriver driver;
-    DragMove dragMove;
 
     @BeforeAll
     public static void setUp() {
@@ -19,12 +18,11 @@ public class DragTestBase {
     }
 
     @BeforeEach
-    public void driverSetUp() {
+    public  void driverSetUp() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
-        driver.get("http://www.seleniumui.moderntester.pl/draggable.php");
-        dragMove = new DragMove(driver);
+        driver.get("http://www.seleniumui.moderntester.pl/modal-dialog.php");
     }
 
     @AfterEach
